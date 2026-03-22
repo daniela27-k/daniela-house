@@ -90,7 +90,7 @@ const registrarse = async () => {
   }
 
   try {
-    const res = await fetch('daniela-house-production.up.railway.app/api/auth/registro', {
+    const res = await fetch('https://daniela-house-production.up.railway.app/api/auth/registro', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

@@ -80,7 +80,7 @@ const citas = ref([])
 const cargarCitas = async () => {
   try {
     const token = localStorage.getItem('token')
-    const res = await fetch('daniela-house-production.up.railway.app/api/citas/mis-citas', {
+    const res = await fetch('https://daniela-house-production.up.railway.app/api/citas/mis-citas', {
       headers: { 'authorization': token }
     })
     citas.value = await res.json()
@@ -92,7 +92,7 @@ const cargarCitas = async () => {
 const cancelarCita = async (id) => {
   try {
     const token = localStorage.getItem('token')
-    await fetch(`daniela-house-production.up.railway.app/api/citas/${id}`, {
+    await fetch(`https://daniela-house-production.up.railway.app/api/citas/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

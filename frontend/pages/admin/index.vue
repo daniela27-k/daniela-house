@@ -111,7 +111,7 @@ const citasConfirmadas = computed(() => citas.value.filter(c => c.estado === 'co
 const cargarCitas = async () => {
   try {
     const token = localStorage.getItem('token')
-    const res = await fetch('daniela-house-production.up.railway.app/api/citas', {
+    const res = await fetch('https://daniela-house-production.up.railway.app/api/citas', {
       headers: { 'authorization': token }
     })
     citas.value = await res.json()
@@ -123,7 +123,7 @@ const cargarCitas = async () => {
 const cambiarEstado = async (id, estado) => {
   try {
     const token = localStorage.getItem('token')
-    await fetch(`daniela-house-production.up.railway.app/api/citas/${id}`, {
+    await fetch(`https://daniela-house-production.up.railway.app/api/citas/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

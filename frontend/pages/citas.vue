@@ -103,7 +103,7 @@ const servicios = ref([])
 
 onMounted(async () => {
   try {
-    const res = await fetch('daniela-house-production.up.railway.app/api/servicios')
+    const res = await fetch('https://daniela-house-production.up.railway.app/api/servicios')
     servicios.value = await res.json()
   } catch (e) {
     console.log('Error cargando servicios')
@@ -118,7 +118,7 @@ const agendarCita = async () => {
 
   try {
     const token = localStorage.getItem('token')
-    const res = await fetch('daniela-house-production.up.railway.app/api/citas', {
+    const res = await fetch('https://daniela-house-production.up.railway.app/api/citas', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
